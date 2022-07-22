@@ -44,8 +44,8 @@ const db = getFirestore()
     .get()
       .then(collection => {
         const cars = collection.docs.map(doc => {
-            let car = doc.data()
-            car.id = doc.id  
+            let car = doc.data() /// {make, model, color, year}
+            car.id = doc.id      /// {make, model, color, year, id} 
             return car        
         })
         console.log(cars)
